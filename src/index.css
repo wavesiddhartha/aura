@@ -1,0 +1,304 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Hide all scrollbars globally */
+  * {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  *::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+  }
+
+  /* Interactive States: NO focus ring, outline, or box-shadow on focus */
+  input:focus, 
+  textarea:focus, 
+  select:focus, 
+  button:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    --tw-ring-offset-width: 0px !important;
+    --tw-ring-width: 0px !important;
+    --tw-ring-color: transparent !important;
+  }
+
+  body {
+    @apply h-full bg-[#f5f5f3] text-text-primary selection:bg-bg-alt4;
+  }
+}
+
+/* Custom Live Dot Pulsing Animation */
+@keyframes pulse-dot {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.live-dot {
+  animation: pulse-dot 1.8s ease-in-out infinite;
+}
+
+/* Pulsing Recording Ring Animation */
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.82);
+    opacity: 0.65;
+  }
+  100% {
+    transform: scale(2.1);
+    opacity: 0;
+  }
+}
+
+.ring-pulse {
+  animation: pulse-ring 3.8s cubic-bezier(0.215, 0.610, 0.355, 1) infinite;
+}
+
+/* Card flip transition utilities */
+.perspective-1000 {
+  perspective: 1000px;
+}
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+}
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Premium Dark Mode Override System */
+.dark body {
+  background-color: #080808 !important;
+  color: #f5f5f3 !important;
+}
+
+.dark .bg-white {
+  background-color: #121212 !important;
+}
+
+.dark .bg-\[\#f5f5f3\] {
+  background-color: #1c1c1c !important;
+}
+
+.dark .bg-\[\#fafaf9\] {
+  background-color: #121212 !important;
+}
+
+.dark .bg-\[\#f5f5f3\]\/40 {
+  background-color: rgba(28, 28, 28, 0.4) !important;
+}
+
+.dark .bg-\[\#ebebea\] {
+  background-color: #1c1c1c !important;
+}
+
+.dark .border-\[\#080808\] {
+  border-color: #f5f5f3 !important;
+}
+
+.dark .stroke-\[\#080808\] {
+  stroke: #f5f5f3 !important;
+}
+
+.dark .stroke-\[\#5a5a55\] {
+  stroke: #a0a09a !important;
+}
+
+.dark .stroke-\[\#9a9a94\] {
+  stroke: #5a5a55 !important;
+}
+
+.dark .stroke-\[\#a0a09a\] {
+  stroke: #5a5a55 !important;
+}
+
+.dark .hover\:border-\[\#080808\]:hover {
+  border-color: #f5f5f3 !important;
+}
+
+.dark .hover\:text-\[\#080808\]:hover {
+  color: #f5f5f3 !important;
+}
+
+.dark ::placeholder {
+  color: #5a5a55 !important;
+}
+
+.dark .text-\[\#080808\] {
+  color: #f5f5f3 !important;
+}
+
+.dark .text-black {
+  color: #f5f5f3 !important;
+}
+
+.dark .text-\[\#5a5a55\] {
+  color: #a0a09a !important;
+}
+
+.dark .text-\[\#a0a09a\] {
+  color: #a0a09a !important;
+}
+
+.dark .text-\[\#b0b0a8\] {
+  color: #8a8a80 !important;
+}
+
+.dark .border {
+  border-color: #1c1c1c !important;
+}
+
+.dark .border-border {
+  border-color: #1c1c1c !important;
+}
+
+.dark .border-\[\#e8e8e4\] {
+  border-color: #1c1c1c !important;
+}
+
+.dark .border-\[\#e4e4e0\] {
+  border-color: #222222 !important;
+}
+
+.dark .border-\[\#ebebea\] {
+  border-color: #1c1c1c !important;
+}
+
+.dark .border-t {
+  border-top-color: #1c1c1c !important;
+}
+
+.dark .border-b {
+  border-bottom-color: #1c1c1c !important;
+}
+
+.dark .border-r {
+  border-right-color: #1c1c1c !important;
+}
+
+.dark .border-l {
+  border-left-color: #1c1c1c !important;
+}
+
+.dark .hover\:bg-\[\#f5f5f3\]:hover {
+  background-color: #181818 !important;
+}
+
+.dark .hover\:bg-\[\#ebebea\]:hover {
+  background-color: #1c1c1c !important;
+}
+
+.dark input, .dark textarea {
+  color: #f5f5f3 !important;
+}
+
+.dark code {
+  background-color: #1c1c1c !important;
+  color: #f5f5f3 !important;
+  border-color: #222222 !important;
+}
+
+/* KaTeX equations in dark mode */
+.dark .katex {
+  color: #f5f5f3 !important;
+}
+
+/* SVG Graph elements */
+.dark text {
+  fill: #f5f5f3 !important;
+}
+
+.dark line[stroke="#ebebea"] {
+  stroke: #222222 !important;
+}
+
+.dark line[stroke="#080808"] {
+  stroke: #f5f5f3 !important;
+}
+
+.dark circle[fill="#080808"] {
+  fill: #f5f5f3 !important;
+}
+
+.dark circle[stroke="white"] {
+  stroke: #121212 !important;
+}
+
+.dark rect[fill="#ffffff"] {
+  fill: #121212 !important;
+  stroke: #f5f5f3 !important;
+}
+
+.dark rect[fill="#fafaf9"] {
+  fill: #181818 !important;
+  stroke: #f5f5f3 !important;
+}
+
+.dark rect[fill="url(#grid)"] {
+  fill: none !important;
+}
+
+.dark pattern path {
+  stroke: #181818 !important;
+}
+
+/* Custom design system dark overrides */
+.dark .text-text-primary {
+  color: #f5f5f3 !important;
+}
+.dark .text-text-secondary {
+  color: #a0a09a !important;
+}
+.dark .text-text-muted1 {
+  color: #6c6c66 !important;
+}
+.dark .text-text-muted2 {
+  color: #5a5a55 !important;
+}
+.dark .text-text-muted3 {
+  color: #444440 !important;
+}
+
+.dark .bg-bg-alt1 {
+  background-color: #121212 !important;
+}
+.dark .bg-bg-alt3 {
+  background-color: #1c1c1c !important;
+}
+.dark .bg-bg-alt4 {
+  background-color: #222222 !important;
+}
+
+.dark .bg-white\/95 {
+  background-color: rgba(18, 18, 18, 0.95) !important;
+}
+
+/* Drawer slide up and shadows */
+@keyframes slide-up {
+  from { transform: translateY(100%); opacity: 0.8; }
+  to { transform: translateY(0); opacity: 1; }
+}
+.animate-slide-up {
+  animation: slide-up 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.shadow-premium {
+  box-shadow: 0 -8px 32px rgba(8, 8, 8, 0.08);
+}
+.dark .shadow-premium {
+  box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.4);
+}
+
